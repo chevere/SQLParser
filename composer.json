@@ -1,5 +1,5 @@
 {
-	"name": "iamcal/sql-parser",
+	"name": "chevere/sql-parser",
 	"description": "MySQL schema parser",
 	"type": "library",
 	"license": "MIT",
@@ -7,23 +7,65 @@
 		{
 			"name": "Cal Henderson",
 			"email": "cal@iamcal.com"
+		},
+		{
+			"name": "Rodolfo Berrios",
+			"email": "rodolfo@chevere.org"
 		}
 	],
+	"require": {
+		"php": "^8.1"
+	},
+	"require-dev": {
+		"phpstan/phpstan": "^1.9",
+		"phpunit/phpunit": "^9",
+		"symplify/easy-coding-standard": "^11.1"
+	},
 	"autoload": {
 		"psr-4": {
 			"iamcal\\": "src"
 		}
 	},
-	"require-dev": {
-		"phpunit/phpunit": "^5|^6|^7|^8|^9",
-		"php-coveralls/php-coveralls": "^1.0"
+	"config": {
+		"optimize-autoloader": true,
+		"sort-packages": true
 	},
 	"scripts": {
-		"test": "vendor/bin/phpunit -c phpunit.xml.dist",
-		"test-coverage": "vendor/bin/phpunit -c phpunit.xml.dist --coverage-clover build/logs/clover.xml"
+		"all": [
+			"composer phpstan",
+			"composer test",
+			"composer test-coverage",
+			"composer infection -- --skip-initial-tests --coverage=build/logs"
+		],
+		"infection": [
+			"Composer\\Config::disableProcessTimeout",
+			"infection --only-covered -j10"
+		],
+		"infection-filter": "sh -c 'sh -c \"composer infection -- --filter=$0 --test-framework-options=--filter=$1\"' $1 $2",
+		"phpstan": "vendor/bin/phpstan analyze src/ --memory-limit 512M --level 3",
+		"test": [
+			"Composer\\Config::disableProcessTimeout",
+			"vendor/bin/phpunit -c phpunit.xml"
+		],
+		"test-coverage": [
+			"Composer\\Config::disableProcessTimeout",
+			"vendor/bin/phpunit -c phpunit-coverage.xml"
+		],
+		"cs-update": "mkdir -p .ecs && cd .ecs && curl -O https://raw.githubusercontent.com/chevere/code-style/main/.ecs/ecs-chevere.php",
+		"cs-fix": "vendor/bin/ecs --config='.ecs/ecs.php' check src --fix",
+		"open-coverage": "open build/logs/html/index.html",
+		"open-infection": "open build/logs/html/infection.html"
 	},
 	"scripts-descriptions": {
-		"test": "Run tests",
-		"test-coverage": "Run tests with coverage"
+		"all": "Runs all checks",
+		"infection": "Runs infection",
+		"infection-filter": "Runs infection filtered (args infection-filter phpunit-filter)",
+		"phpstan": "Runs phpstan",
+		"test": "Run test suite",
+		"test-coverage": "Run test suite (coverage)",
+		"cs-update": "Update Chevere code style definition",
+		"cs-fix": "Update Chevere code style definition",
+		"open-coverage": "Open code coverage report",
+		"open-infection": "Open infection report"
 	}
 }

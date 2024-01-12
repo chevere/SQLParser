@@ -1,7 +1,18 @@
 # SQLParser - Parse MySQL schemas in PHP, fast
 
-[![Build Status](https://github.com/iamcal/SQLParser/actions/workflows/php.yml/badge.svg)](https://github.com/iamcal/SQLParser/actions)
-[![Coverage Status](https://coveralls.io/repos/github/iamcal/SQLParser/badge.svg?branch=master)](https://coveralls.io/github/iamcal/SQLParser?branch=master)
+[![Build](https://img.shields.io/github/actions/workflow/status/chevere/sql-parser/test.yml?branch=0.5&style=flat-square)](https://github.com/chevere/sql-parser/actions)
+![Code size](https://img.shields.io/github/languages/code-size/chevere/sql-parser?style=flat-square)
+[![Apache-2.0](https://img.shields.io/github/license/chevere/sql-parser?style=flat-square)](LICENSE)
+[![PHPStan](https://img.shields.io/badge/PHPStan-level%209-blueviolet?style=flat-square)](https://phpstan.org/)
+[![Mutation testing badge](https://img.shields.io/endpoint?style=flat-square&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fchevere%2Fsql-parser%2F0.5)](https://dashboard.stryker-mutator.io/reports/github.com/chevere/sql-parser/0.5)
+
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=chevere_sql-parser&metric=alert_status)](https://sonarcloud.io/dashboard?id=chevere_sql-parser)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=chevere_sql-parser&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=chevere_sql-parser)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=chevere_sql-parser&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=chevere_sql-parser)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=chevere_sql-parser&metric=security_rating)](https://sonarcloud.io/dashboard?id=chevere_sql-parser)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=chevere_sql-parser&metric=coverage)](https://sonarcloud.io/dashboard?id=chevere_sql-parser)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=chevere_sql-parser&metric=sqale_index)](https://sonarcloud.io/dashboard?id=chevere_sql-parser)
+[![CodeFactor](https://www.codefactor.io/repository/github/chevere/sql-parser/badge)](https://www.codefactor.io/repository/github/chevere/sql-parser)
 
 This library takes MySQL `CREATE TABLE` statements and returns a data structure representing the table that it defines.
 MySQL syntax [version 5.7](https://dev.mysql.com/doc/refman/5.7/en/create-table.html) is supported.
@@ -12,7 +23,7 @@ This library does not try to validate input - the goal is to deconstruct valid `
 You can install this package using composer. To add it to your `composer.json`:
 
 ```plain
-composer require iamcal/sql-parser
+composer require chevere/sql-parser
 ```
 
 You can then load it using the composer autoloader:

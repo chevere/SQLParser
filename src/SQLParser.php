@@ -2,9 +2,7 @@
 
 namespace iamcal;
 
-class SQLParserSyntaxException extends \Exception { }
-
-class SQLParser{
+class SQLParser {
 
 	#
 	# the main public interface is very simple
