@@ -1,10 +1,10 @@
 # SQLParser - Parse MySQL schemas in PHP, fast
 
-[![Build](https://img.shields.io/github/actions/workflow/status/chevere/sql-parser/test.yml?branch=0.5&style=flat-square)](https://github.com/chevere/sql-parser/actions)
-![Code size](https://img.shields.io/github/languages/code-size/chevere/sql-parser?style=flat-square)
-[![Apache-2.0](https://img.shields.io/github/license/chevere/sql-parser?style=flat-square)](LICENSE)
-[![PHPStan](https://img.shields.io/badge/PHPStan-level%203-blueviolet?style=flat-square)](https://phpstan.org/)
-[![Mutation testing badge](https://img.shields.io/endpoint?style=flat-square&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fchevere%2FSQLParser%2F0.5)](https://dashboard.stryker-mutator.io/reports/github.com/chevere/SQLParser/0.5)
+[![Build](https://img.shields.io/github/actions/workflow/status/chevere/sql-parser/test.yml?branch=0.5&style)](https://github.com/chevere/sql-parser/actions)
+![Code size](https://img.shields.io/github/languages/code-size/chevere/sql-parser?style)
+[![Apache-2.0](https://img.shields.io/github/license/chevere/sql-parser?style)](LICENSE)
+[![PHPStan](https://img.shields.io/badge/PHPStan-level%203-blueviolet?style)](https://phpstan.org/)
+[![Mutation testing badge](https://img.shields.io/endpoint?style&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fchevere%2Fsql-parser%2F0.5)](https://dashboard.stryker-mutator.io/reports/github.com/chevere/sql-parser/0.5)
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=chevere_sql-parser&metric=alert_status)](https://sonarcloud.io/dashboard?id=chevere_sql-parser)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=chevere_sql-parser&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=chevere_sql-parser)
